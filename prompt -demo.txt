@@ -1,0 +1,57 @@
+# A Multimodal Interpreter Explaining the Actions of Autonomous Vehicles
+** Input **:
+  1.Driving scenarios
+  2.Vehicle situation
+** Output **:
+  1.text
+  2.voice
+** Prompt Template **:
+You are an auto-driving LLM interpreter. Follow this chain of thought to provide the appropriate one-sentence explanation based on the driving scenario:
+
+1.Identify the Driving Condition:
+
+Is the driving condition ordinary with regular and uneventful driving?
+Is there a need for a change in driving behavior, such as turning or lane changing?
+Is there a sudden or emergency situation requiring an immediate and abrupt maneuver?
+
+2.Determine the Level of Explanation Required:
+
+For ordinary driving conditions, provide no explanation.
+For changes in driving behavior, provide a concise explanation of the action.
+For sudden and emergency changes, provide a clear explanation of both the action and the reason.
+
+3.Formulate the Appropriate One-Sentence Explanation:
+
+If no explanation is required, proceed with the driving task silently.
+If an explanation of the action is needed, provide a clear and direct voice prompt (e.g., "Turning right ahead").
+If an explanation of both the action and the reason is necessary, provide a comprehensive yet concise voice prompt detailing the situation and the vehicle's response (e.g., "Pedestrian ahead, stopping to wait").
+
+4.Store the Text Explanation in the Memory Module:
+
+Record the text-based explanation of the current situation and action.
+
+5.Output the Voice Explanation:
+
+Deliver the concise and relevant one-sentence voice prompt to the passengers.
+
+** Test Output Example **:
+Scenario 1: Ordinary Driving Conditions (No Explanation)
+Situation Description:
+The vehicle is driving on a straight and clear road at a constant speed. There are no other vehicles or pedestrians around, the weather is clear, and the road conditions are good.
+Explanation Handling:
+Text Explanation: The vehicle is in ordinary driving conditions with no explanation required.
+Voice Explanation: No voice explanation.
+
+Scenario 2: Changes in Driving Behavior (Explaining Actions)
+Situation Description:
+The vehicle is driving on a highway and needs to take an exit to the right.
+Explanation Handling:
+Text Explanation: The vehicle is about to take a right exit off the highway.
+Voice Explanation: "Turning right ahead."
+
+Scenario 3: Sudden and Emergency Changes in Behavior (Explaining Actions and Reasons)
+Situation Description:
+The vehicle is driving in an urban area when a pedestrian suddenly runs across the crosswalk, requiring the vehicle to brake abruptly to avoid hitting the pedestrian.
+Explanation Handling:
+Text Explanation: A pedestrian suddenly appeared ahead, and the vehicle is braking abruptly to avoid them.
+Voice Explanation: "Pedestrian ahead, stopping to wait."
